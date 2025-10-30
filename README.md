@@ -2,15 +2,22 @@
 
 Este repositorio incluye utilidades para generar base de datos geoespaciales orientados a series temporales de deforestación/distancia a pérdida de bosque y a la construcción de *patches* (parches) para modelos supervisados.
 
+## La presentación de los detalles del modelo computacional se encuentra en:
+
+```reports/Presentacion_GLP.pdf```
+
 ## La Libreta principal está en:
 
 ```/notebooks/GLP.ipynb```
+https://github.com/rdglpz/prediction_with_spatial_non_stationarity/blob/main/reports/Presentacion_GLP.pdf
+
 
 Esta incluye los experimentos incluyendo la generación de la base de datos geoespacio temporal con histogramas y ejemplos y su modelación con redes neuronales.
 
 
 ## Descripción general
-Este módulo proporciona:
+El modulo mas importante es el ```src/deforestation_utils.py``` que contiene:
+
 - **Herramientas de regionialización** para indexar el espacio en bloques regulares cuadrados (`makeGrid`).
 - **Lectura de máscaras geoespaciales** (GeoTIFF) y aplicación como mascara binaria de presencia o número no disponible /NaN (`readMask`).
 - **Generación de base de datos temporales de histograma** de tamaño BINS X años X celda.  Los histogramas indican la frecuencia de la  pérdida de bosque a cierta distancia del suelo deforestado. Desde archivos GeoTIFF (`loadMapinNumpy`).
